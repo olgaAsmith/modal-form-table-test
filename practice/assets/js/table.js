@@ -25,6 +25,7 @@ async function getData() {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
     originalData = await response.json();
+    searchResults = JSON.parse(JSON.stringify(originalData));
     renderTable(originalData);
   } catch (error) {
     console.log("Ошибка");
@@ -36,7 +37,7 @@ sortPostId.addEventListener("click", () => {
   const isSorted = sortPostId.dataset.sorted;
   sortPostId.dataset.sorted = isSorted === "true" ? "false" : "true";
   icon.classList.toggle("table__icon--reverse");
-  const sortedData = originalData.sort((a, b) =>
+  const sortedData = searchResults.sort((a, b) =>
     isSorted === "true" ? b.id - a.id : a.id - b.id
   );
   renderTable(sortedData);
@@ -47,7 +48,7 @@ sortUserId.addEventListener("click", () => {
   const isSorted = sortUserId.dataset.sorted;
   sortUserId.dataset.sorted = isSorted === "true" ? "false" : "true";
   icon.classList.toggle("table__icon--reverse");
-  const sortedData = originalData.sort((a, b) =>
+  const sortedData = searchResults.sort((a, b) =>
     isSorted === "true" ? b.userId - a.userId : a.userId - b.userId
   );
   renderTable(sortedData);
@@ -60,8 +61,8 @@ sortTitle.addEventListener("click", () => {
   icon.classList.toggle("table__icon--reverse");
   const sortedData =
     isSorted === "true"
-      ? originalData.sort((a, b) => a.title.localeCompare(b.title))
-      : originalData.sort((a, b) => b.title.localeCompare(a.title));
+      ? searchResults.sort((a, b) => a.title.localeCompare(b.title))
+      : searchResults.sort((a, b) => b.title.localeCompare(a.title));
   renderTable(sortedData);
 });
 
@@ -72,8 +73,8 @@ sortBody.addEventListener("click", () => {
   icon.classList.toggle("table__icon--reverse");
   const sortedData =
     isSorted === "true"
-      ? originalData.sort((a, b) => a.body.localeCompare(b.body))
-      : originalData.sort((a, b) => b.body.localeCompare(a.body));
+      ? searchResults.sort((a, b) => a.body.localeCompare(b.body))
+      : searchResults.sort((a, b) => b.body.localeCompare(a.body));
   renderTable(sortedData);
 });
 
@@ -87,6 +88,7 @@ searching.addEventListener("submit", function (event) {
   if (inputValue.length < 3) {
     error.textContent = "Введите не менее 3 символов чтобы начать поиск";
     input.classList.add("input__area--error");
+    return
   } else {
     input.classList.remove("input__area--error");
     error.textContent = "";
