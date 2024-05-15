@@ -189,3 +189,10 @@
 .input__area--select option:checked {
   font-weight: 700;
 }
+
+@media screen and (max-width: 640px) {
+  .input__error {
+    font-size: 8px;
+    text-wrap: nowrap;
+  }
+}

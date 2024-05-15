@@ -45,7 +45,6 @@
 @media screen and (max-width: 1024px) {
   .form {
     padding: 23px 46px;
-    gap: 16px;
   }
 
   .form__primary {

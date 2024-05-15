@@ -6,10 +6,4 @@
 Часть 2 - в папке practice(модальное окно открывается с главной страницы, там же следующим блоком табличка с выполненным запросом и сортировкой)
 https://olgaasmith.github.io/modal-form-table-test/practice/index.html
 
-Ссылка на вторую часть отдельно: 
-##### rep https://github.com/olgaAsmith/modal-form-table
-
-##### GH pages -- https://olgaasmith.github.io/modal-form-table/
-
-
 
