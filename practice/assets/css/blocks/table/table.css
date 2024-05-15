@@ -1,0 +1,59 @@
+
+table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 2px solid rgb(148, 137, 250);
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #afc8e9;
+  min-width: 100px;
+  cursor: pointer;
+}
+
+.table__icon {
+  background-image: url(../../../images/arrow.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+
+.table__icon--reverse {
+  transform: rotateX(180deg);
+}
+
+.table__form {
+  display: flex;
+  gap: 40px;
+}
+.table__form .input{
+  font-size: 24px;
+  width: 50%;
+}
+.table__form .button{
+  width: 50%;
+}
+
+@media screen and (max-width: 1024px) {
+  th {
+    min-width: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  table {
+    font-size: 10px;
+  }
+}

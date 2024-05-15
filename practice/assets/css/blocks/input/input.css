@@ -1,0 +1,191 @@
+.input {
+  position: relative;
+  width: 100%;
+}
+
+.input__label {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color: #6A6E72;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.input__required {
+  color: #D90000;
+  padding-right: 2px;
+}
+
+.input__area {
+  width: 100%;
+  height: 56px;
+  background-color: #FFF;
+  border: none;
+  border: 1px solid #D6DADE;
+  border-radius: 3px;
+  outline: none;
+  padding: 22px 16px 8px;
+}
+
+.input__error {
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  color: #D90000;
+  font-size: 10px;
+  line-height: 16px;
+}
+
+.input__area--error {
+  border: 1px solid #D90000;
+}
+
+.input__icon {
+  position: absolute;
+  top: 19px;
+  right: 16px;
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.input__area--social {
+  padding: 16px 60px 16px 16px;
+}
+
+.input__area::placeholder {
+  font-family: inherit;
+  font-size: 14px;
+  color: #c9bebe;
+}
+
+.input--avatar {
+  width: 175px;
+  height: 175px;
+}
+
+.input--avatar .input__label {
+  width: 100%;
+  left: 0;
+  top: -35px;
+  text-align: center;
+  color: #6A6E72;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  pointer-events: none;
+}
+
+.input__area--avatar {
+  width: 100%;
+  height: 100%;
+	position: absolute;
+  inset: 0;
+	opacity: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.input__area--hide {
+  cursor: default;
+  pointer-events: none;
+}
+
+.input--avatar:hover .input__choose-file{
+  color: #e96354;
+}
+
+.input--avatar:hover .input__choose-file-icon {
+  background-image: url(../../../images/file--hover.svg);
+}
+
+.input__choose-file {
+  position: relative;
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+	cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.30);
+  border-radius: 50%;
+  color: #FFF;
+  text-align: center;
+  font-family: "PT Sans";
+  font-size: 18.667px;
+  line-height: 28px;
+  text-decoration-line: underline;
+  z-index: 10;
+}
+
+.input__choose-file--hide {
+  opacity: 0;
+  cursor: default;
+}
+
+.input__choose-file-icon {
+  background-image: url(../../../images/file.svg);
+  display: block;
+  width: 29.167px;
+  height: 29.167px;
+}
+
+.input__delete-button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  background-image: url(../../../images/close.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+.input__avatar-chosen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.input__area--select {
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  z-index: 10;
+}
+
+.input__area--select:focus {
+  outline: none;
+}
+
+.input__area--select-dropdown {
+  width: 12px;
+  height: 20px;
+  position: absolute;
+  top: 19px;
+  right: 16px;
+  display: block;
+  background-image: url(../../../images/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+}
+
+.input__area--select option:checked {
+  font-weight: 700;
+}

@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  color: #0C1014;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 0;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+@media screen and (max-width: 480px) {
+  .app {
+    padding: 5px;
+  }
+}
+

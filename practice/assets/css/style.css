@@ -1,0 +1,13 @@
+@import "normalize.css";
+@import "../fonts/fonts.css";
+
+@import "../css/blocks/general/general.css";
+@import "../css/blocks/modal/modal.css";
+@import "../css/blocks/form/form.css";
+@import "../css/blocks/input/input.css";
+@import "../css/blocks/button/button.css";
+@import "../css/blocks/table/table.css";
+
+
+
+

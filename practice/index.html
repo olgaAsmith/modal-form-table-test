@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Modal-form-table</title>
+  </head>
+  <body>
+    <div class="app">
+      <h1>App - Modal-Form-Table</h1>
+      <hr>
+      <main>
+        <section>
+          <h2>Modal</h2>
+          <button onclick="openModal()" class="button button--main">
+            Open modal
+          </button>
+          <hr>
+        </section>
+        <section class="table">
+          <h2>Table</h2>
+          <form id="searching" class="table__form">
+            <div class="input">
+              <label for="input-table" class="input__label"> </label>
+              <input
+                type="text"
+                id="input-table"
+                name="input-table"
+                class="input__area"
+              />
+              <span class="input__error"></span>
+            </div>
+            <button type="submit" class="button button--main">Найти</button>
+          </form>
+
+          <table>
+            <thead>
+              <tr>
+                <th id="userID" data-sorted="true">
+                  User ID <span class="table__icon"></span>
+                </th>
+
+                <th id="postID" data-sorted="true">
+                  ID <span class="table__icon"></span>
+                </th>
+
+                <th id="title" data-sorted="true">
+                  Title <span class="table__icon"></span>
+                </th>
+
+                <th id="body" data-sorted="true">
+                  Body <span class="table__icon"></span>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </section>
+      </main>
+      <div class="modal" id="modal">
+        <div class="modal__window">
+          <form class="form" id="form">
+            <h3 class="form__title">Стать партнёром проекта</h3>
+            <div class="form__primary">
+              <div class="form__primary-aside">
+                <div class="input">
+                  <label for="input-company" class="input__label"
+                    ><span class="input__required">✱</span>Название
+                    организации</label
+                  >
+                  <input
+                    type="text"
+                    id="input-company"
+                    name="input-company"
+                    class="input__area"
+                    placeholder="Введите название вашей организации"
+                    required
+                  />
+                  <span class="input__error"></span>
+                </div>
+                <div class="input">
+                  <label for="input-tel" class="input__label"
+                    ><span class="input__required">✱</span>Телефон</label
+                  >
+                  <input
+                    type="tel"
+                    id="input-tel"
+                    name="input-tel"
+                    class="input__area"
+                    placeholder="+79998887766"
+                    required
+                    pattern="\+\d{11}"
+                  />
+                  <span class="input__error"></span>
+                </div>
+                <div class="input">
+                  <label for="input-email" class="input__label"
+                    ><span class="input__required">✱</span>E-mail</label
+                  >
+                  <input
+                    type="email"
+                    id="input-email"
+                    name="input-email"
+                    class="input__area"
+                    placeholder="yourmail@mail.com"
+                    required
+                  />
+                  <span class="input__error"></span>
+                </div>
+              </div>
+              <div class="input input--avatar">
+                <label class="input__label"
+                  ><span class="input__required">✱</span>Логотип (jpeg,
+                  png)</label
+                >
+                <input
+                  type="file"
+                  id="input-avatar"
+                  name="input-avatar"
+                  class="input__area input__area--avatar"
+                  required
+                  accept="image/jpeg, image/png"
+                />
+                <span class="input__error input__error--avatar"></span>
+                <div class="input__choose-file" id="overlay-area">
+                  <span
+                    class="input__choose-file-icon input__choose-file-icon--hover"
+                  ></span>
+                  Выберите файл
+                </div>
+                <button
+                  type="button"
+                  id="delete-button"
+                  class="button input__delete-button"
+                  title="Удалить логотип"
+                ></button>
+                <span class="input__avatar-chosen" id="avatar-chosen"></span>
+              </div>
+            </div>
+
+            <div class="form__secondary">
+              <div class="input">
+                <label for="input-direction" class="input__label"
+                  ><span class="input__required">✱</span>Направление</label
+                >
+                <select
+                  class="input__area input__area--select"
+                  required
+                  id="input-direction"
+                  name="input-direction"
+                >
+                  <option hidden value="">Выберите опцию...</option>
+
+                  <option value="1">Экология</option>
+                  <option value="2">Экономика</option>
+                </select>
+                <span class="input__error"></span>
+                <span class="input__area--select-dropdown"></span>
+              </div>
+
+              <div class="input">
+                <label for="input-web-address" class="input__label"></label>
+                <input
+                  type="text"
+                  id="input-web-address"
+                  name="input-web-address"
+                  class="input__area input__area--social"
+                  placeholder="Выберите направление..."
+                />
+                <span class="input__error"></span>
+                <span class="input__icon"
+                  ><img src="./assets/images/web.svg" alt="Web icon"
+                /></span>
+              </div>
+
+              <div class="input">
+                <label for="input-vk" class="input__label"></label>
+                <input
+                  type="text"
+                  id="input-vk"
+                  name="input-vk"
+                  class="input__area input__area--social"
+                  placeholder="Аккаунт Вконтакте"
+                />
+                <span class="input__error"></span>
+                <span class="input__icon"
+                  ><img src="./assets/images/vk.svg" alt="VK icon"
+                /></span>
+              </div>
+
+              <div class="input">
+                <label for="input-ok" class="input__label"></label>
+                <input
+                  type="text"
+                  id="input-ok"
+                  name="input-ok"
+                  class="input__area input__area--social"
+                  placeholder="Аккаунт в Одноклассниках"
+                />
+                <span class="input__error"></span>
+                <span class="input__icon"
+                  ><img src="./assets/images/ok.svg" alt="OK icon"
+                /></span>
+              </div>
+
+              <div class="input">
+                <label for="input-fb" class="input__label"></label>
+                <input
+                  type="text"
+                  id="input-fb"
+                  name="input-fb"
+                  class="input__area input__area--social"
+                  placeholder="Аккаунт в Facebook"
+                />
+                <span class="input__error"></span>
+                <span class="input__icon"
+                  ><img src="./assets/images/fb.svg" alt="Facebook icon"
+                /></span>
+              </div>
+
+              <div class="input">
+                <label for="input-insta" class="input__label"></label>
+                <input
+                  type="text"
+                  id="input-insta"
+                  name="input-insta"
+                  class="input__area input__area--social"
+                  placeholder="Аккаунт в Instagram"
+                />
+                <span class="input__error"></span>
+                <span class="input__icon"
+                  ><img src="./assets/images/insta.svg" alt="Instagram icon"
+                /></span>
+              </div>
+
+              <div class="input">
+                <label for="input-youtube" class="input__label"></label>
+                <input
+                  type="text"
+                  id="input-youtube"
+                  name="input-youtube"
+                  class="input__area input__area--social"
+                  placeholder="Аккаунт в Youtube"
+                />
+                <span class="input__error"></span>
+                <span class="input__icon"
+                  ><img src="./assets/images/youtube.svg" alt="Youtube icon"
+                /></span>
+              </div>
+            </div>
+
+            <div class="form__buttons">
+              <button class="button button--pink" type="submit">
+                Стать партнёром проекта
+              </button>
+              <button
+                class="button button--transparent"
+                type="button"
+                onclick="closeModal()"
+              >
+                Отменить
+              </button>
+            </div>
+          </form>
+          <button
+            class="button modal__button"
+            onclick="closeModal()"
+            title="Закрыть"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/upload.js"></script>
+    <script src="./assets/js/table.js"></script>
+  </body>
+</html>
